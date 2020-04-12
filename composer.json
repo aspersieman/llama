@@ -1,0 +1,16 @@
+{
+  "name": "aspersieman/llama",
+  "type": "library",
+  "description": "Mini CLI-only Experimental MVC PHP Framework. Forked from minicli/minicli",
+  "license": "MIT",
+  "homepage": "https://github.com/aspersieman/llama",
+  "keywords": ["cli","command-line"],
+  "autoload": {
+    "psr-4": {
+      "Llama\\": "lib/"
+    }
+  },
+  "require": {
+    "ext-readline": "*"
+  }
+}
