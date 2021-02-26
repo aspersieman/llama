@@ -113,6 +113,15 @@ abstract class CommandController implements ControllerInterface
     }
 
     /**
+     * @return CommandSignature
+     */
+    public function getSignature()
+    {
+        $signature = property_exists($this, "signature") && $this->signature instanceof CommandSignature ? $this->signature : null;
+        return $signature;
+    }
+
+    /**
      * Called within `__construct`
      * @param array $envs
      * @return bool
@@ -121,7 +130,7 @@ abstract class CommandController implements ControllerInterface
     {
       $undefineds = [];
       foreach ($envs as $env) {
-        if (!isset($_ENV[$env])) {
+        if (!empty($env) && !isset($_ENV[$env])) {
           $undefineds[] = $env;
         }
       }
